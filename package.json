@@ -1,0 +1,51 @@
+{
+  "name": "baz-sport-v2",
+  "version": "2.0.0",
+  "description": "A Point of Sale application for Baz Sport",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Omar Abdelall",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.bazsport.v2",
+    "productName": "Baz Sport V2",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "build",
+        "to": "build"
+      },
+      {
+        "from": "libs",
+        "to": "libs"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "firebase": "^12.1.0",
+    "firebase-admin": "^13.4.0"
+  }
+}
